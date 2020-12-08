@@ -11,36 +11,7 @@ const shoppingCartData = {
     },
     "cartProducts": []
 }
-/*function Watch(props) {
-  const watch = props.watch;
-  return html`
-    <div key=${watch.id} className="col-lg-4 col-md-6 col-mb-4">
-      <div className="card h-100">
-        <img
-       src=${"https://images.unsplash.com/" + watch.img}
-          className="card-img-top"
-          alt="bootstraplogo"
-        />
-        <div className="card-body">
-          <h5 className="card-title">${watch.name}</h5>
-          <p className="card-text">${watch.description}</p>
-          <p className="card-text">$${watch.price}</p>
-          <p className="card-text">${watch.stars.toFixed(2)} stars</p>
-          <div
-            onClick=${() =>
-              setShoppingCartQuantity(
-                watch,
-                currentQuantity => currentQuantity + 1
-              )}
-            className="btn btn-primary"
-          >
-            Add to Cart
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}*/
+
 function Watch(props) {
     const watch = props.watch;
     return html`
