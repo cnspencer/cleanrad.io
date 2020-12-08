@@ -1,0 +1,94 @@
+body{ 
+    min-height:100vh; 
+    background-color: #B5B5B5;
+  }
+  h1 {
+    size: 80px;
+    font-weight: 60;
+  }
+  h2 {
+    size: 25px;
+    font-weight: 40;
+    margin-top: 10px;
+  }
+  main > .container {
+    margin-top: 60px;
+    padding: 10px;
+  }
+  
+  .side-borders {
+      border-style: hidden solid hidden solid;
+  }
+  
+  
+  /* Fonts */
+  .main-font {
+    font-family: "Noto Sans", sans-serif;
+  }
+  .main-italic {
+    font-family: "Noto Sans", sans-serif;
+    font-style: italic;
+  }
+  .main-bold {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: bold;
+  }
+  .artist {
+    size: 6px;
+  }
+  .card-title {
+    size: 10px;
+  }
+  
+  /* Navbar classes */
+  .nav-link {
+    color: #D2D3D9;
+  }
+  .navbar {
+    background-color: #1E1E57;
+    color: #D2D3D9;
+  }
+  
+  /* Various Buttons and other specialized divs */
+  .button {
+    background-color: #4F4C85;
+    border-radio: 10%;
+    border: none;
+    color: #F0FFFF;
+  }
+  .text-field {
+    border: none;
+    color: #F0FFFF;
+    background-color: #797887;
+  }
+  .track-line {
+    height: 55px;
+    border-left: 6px solid;
+    border-color: #4F4C85;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #797887;
+    color: #F0FFFF;
+    padding: 3px;
+    margin-top: 3px;
+    vertical-align: bottom;
+  }
+  .card-body {
+    background-color: #797887;
+    color: #F0FFFF;
+  }
+  .footer {
+    background-color: #1E1E57;
+    color: #D2D3D9;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    padding: 20px;
+  }
+  
+  /* Color Hexes
+  Main Bold Color (Navy): #1E1E57
+  Secondary Color (Grey): #797887
+  Secondary Lighter Color (Light Grey): #D2D3D9
+  Background Color: #B5B5B5
+  Tertiary Color (Periwinkle): #4F4C85
+  */
+  
