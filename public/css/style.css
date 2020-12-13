@@ -52,7 +52,7 @@ body{
   /* Various Buttons and other specialized divs */
   .button {
     background-color: #4F4C85;
-    border-radio: 10%;
+    border-ratio: 10%;
     border: none;
     color: #F0FFFF;
   }

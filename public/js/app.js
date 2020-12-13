@@ -12,25 +12,24 @@ const shoppingCartData = {
     "cartProducts": []
 }
 
-function Watch(props) {
-    const watch = props.watch;
+function Album(props) {
+    const album = props.album;
     return html`
-      <div key=${watch.id} className="col-lg-4 col-md-6 col-mb-4">
+      <div key=${album.id} className="col-lg-4 col-md-6 col-mb-4">
         <div className="card h-100">
           <img
-         src=${"/img/watches/" + watch.img}
+         src=${"/img/albums/" + album.img}
             className="card-img-top"
             alt="bootstraplogo"
           />
           <div className="card-body">
-            <h5 className="card-title">${watch.name}</h5>
-            <p className="card-text">${watch.description}</p>
-            <p className="card-text">$${watch.price}</p>
-            <p className="card-text">${watch.stars.toFixed(2)} stars</p>
+            <h5 className="card-title">${album.name}</h5>
+            <p className="card-text">${album.tracknum}</p>
+            <p className="card-text">$${album.price}</p>
             <div
               onClick=${() =>
                 setShoppingCartQuantity(
-                  watch,
+                  album.tracks,
                   currentQuantity => currentQuantity + 1
                 )}
               className="btn btn-primary"
@@ -47,7 +46,7 @@ function SortCriteria(props) {
   // const name = props.name;
   // const checked = props.checked
   const { name, checked, onSortPropChange } = props;
-  const id = `sort-${name}`;
+  const id = `sort-${title}`;
   return html`
     <span className="sort-prop mx-2">
       <input
@@ -58,21 +57,21 @@ function SortCriteria(props) {
         id=${id}
         name="sortbyprop"
       />
-      <label className="mx-1" htmlFor=${id}>${name}</label>
+      <label className="mx-1" htmlFor=${id}>${title}</label>
     </span>
   `;
 }
 function SortingOptions(props) {
   const {
-    watch,
+    album,
     sortProp,
     onSortPropChange,
     sortOrder,
     onSortOrderChange
   } = props;
   // props to exclude from the sort
-  const propsExcludedFromSort = new Set(["id", "img"]);
-  const searchableProps = Object.keys(watch)
+  const propsExcludedFromSort = new Set(["album.track.id", "album.track.img"]);
+  const searchableProps = Object.keys(album)
     // filter out excluded props
     .filter(keyProperty => !propsExcludedFromSort.has(keyProperty))
     // map the keys/props to React Components.
@@ -123,42 +122,42 @@ function SortingOptions(props) {
     </div>
   `;
 }
-function sortWatches(watches, sortProp, sortOrder) {
-  return watches.sort((focusedWatch, alternateWatch) => {
-    const moveFocusedWatchLeft = -1,
-      moveFocusedWatchRight = 1,
-      dontMoveEitherWatch = 0;
-    if (focusedWatch[sortProp] < alternateWatch[sortProp]) {
+function sortTracks(albums, sortProp, sortOrder) {
+  return albums.tracks.sort((focusedAlbum, alternateAlbum) => {
+    const moveFocusedAlbumLeft = -1,
+      moveFocusedAlbumRight = 1,
+      dontMoveEitherAlbum = 0;
+    if (focusedAlbum.tracks[sortProp] < alternateAlbum.tracks[sortProp]) {
       if (sortOrder === "ascending") {
         // move focusedWatch left of alternateWatch
-        return moveFocusedWatchLeft;
+        return moveFocusedAlbumLeft;
       } else {
         // move focusedWatch right of alternateWatch
-        return moveFocusedWatchRight;
+        return moveFocusedAlbumRight;
       }
-    } else if (focusedWatch[sortProp] > alternateWatch[sortProp]) {
+    } else if (focusedAlbum[sortProp] > alternateAlbum[sortProp]) {
       if (sortOrder === "ascending") {
         // move focusedWatch right of alternateWatch
-        return moveFocusedWatchRight;
+        return moveFocusedAlbumRight;
       } else {
         // move focusedWatch left of alternateWatch
-        return moveFocusedWatchLeft;
+        return moveFocusedAlbumLeft;
       }
     } else {
       // Both watches are equal don't move either.
-      return dontMoveEitherWatch;
+      return dontMoveEitherAlbum;
     }
   });
 }
-function Watches(props) {
+function Albums(props) {
   const [sortProp, setSortProp] = React.useState("name");
   const [sortOrder, setSortOrder] = React.useState("ascending");
-  const watches = sortWatches(props.watches, sortProp, sortOrder);
+  const albums = sortTracks(props.albums, sortProp, sortOrder);
   return html`
     <div className="col-12 row">
       <div className="col-12 row">
         <${SortingOptions}
-          watch=${props.watches[0]}
+          album=${props.albums[0]}
           sortProp=${sortProp}
           sortOrder=${sortOrder}
           onSortPropChange=${(isChecked, sortProperty) => {
@@ -174,9 +173,9 @@ function Watches(props) {
         />
       </div>
       <div className="col-12 row">
-        ${watches.map(function(watch) {
+        ${albums.map(function(album) {
           return html`
-            <${Watch} key=${watch.id} watch="${watch}" />
+            <${Album} key=${album.id} album="${album}" />
           `;
         })}
       </div>
@@ -216,17 +215,17 @@ function ShoppingCartItem(props) {
     <div className="row p-2">
     <!--  <img
           style=${{ width: "100%" }}
-          src=${"https://images.unsplash.com/" + item.img}
-          alt=${item.name}
+          src=${item.img}
+          alt=${item.title}
         /> 
         -->
         <img
         style=${{ width: "100%" }}
-        src=${"/img/watches/" + item.img}
-        alt=${item.name}
+        src=${"/img/albums/" + item.img}
+        alt=${item.title}
       />
       <div className="flex-direction-column p-2">
-        <h6 className="">${item.name}</h6>
+        <h6 className="">${item.title}</h6>
         <div className="text-muted">price: $${item.price}</div>
         <div className="text-muted">quantity: ${item.quantity}</div>
       </div>
@@ -280,7 +279,7 @@ function Search() {
       id="search"
       onSubmit=${e => {
         e.preventDefault();
-        filterWatches(searchTerm);
+        filterTracks(searchTerm);
       }}
       className="form-inline my-2 my-lg-0"
     >
@@ -299,13 +298,13 @@ function Search() {
   `;
 }
 // create a copy of watches;
-let filteredWatches;
-function filterWatches(searchTerm) {
-  filteredWatches = watches.products.filter(watch => {
+let filteredTracks;
+function filterTracks(searchTerm) {
+  filteredTracks = albums.tracks.products.filter(track => {
     const lowerSearchTerm = searchTerm;
     return (
-      watch.description.toLowerCase().includes(lowerSearchTerm) ||
-      watch.name.toLowerCase().includes(lowerSearchTerm)
+      track.description.toLowerCase().includes(lowerSearchTerm) ||
+      track.name.toLowerCase().includes(lowerSearchTerm)
     );
   });
   render();
@@ -313,9 +312,9 @@ function filterWatches(searchTerm) {
 window.render = function render() {
   ReactDOM.render(
     html`
-      <${Watches} watches=${filteredWatches} />
+      <${Album} tracks=${filteredTracks} />
     `,
-    document.getElementById("displaywatchesdiv")
+    document.getElementById("albumview")
   );
   ReactDOM.render(
     html`
@@ -342,7 +341,7 @@ fetch('/api/Products').then(response => {
         throw Error("Something went wrong with that request:", response.statusText);
     }
 }).then(function (data) {
-  window.watches = data;
-  filteredWatches = watches.products.slice();
+  window.albums = data;
+  filteredalbums = albums.slice();
   render();
 });
