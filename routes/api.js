@@ -1,7 +1,7 @@
 const express = require("express");
 // https://expressjs.com/en/guide/routing.html#express-router
 const router = express.Router();
-const watches = require("./api/watch.json");
+const albums = require("./api/album.json");
 const { sqlFetch } = require("./utils/utils");
 function getPageAndCount(usersPage, usersCount, totalItems) {
   let page, count;
@@ -36,7 +36,7 @@ function getPageAndCount(usersPage, usersCount, totalItems) {
 }
 router.get("/getProducts", (req, res) => {
   // renders the index.ejs page
-  res.json(watches);
+  res.json(albums);
 });
 router.get("/products", async (req, res) => {
   const allProductsCount = await sqlFetch`

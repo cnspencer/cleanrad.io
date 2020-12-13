@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+          "title": "Songs About Jane",
+          "artist": "Maroon 5",
+          "description": "The debut album of Maroon 5. One track has been altered for daytime standards.",
+          "img": "photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2251&q=80",
+          "price": 1.15,
+          "id": 1,
+          "tracknum": 1,
+          "tracks": [
+              {
+                  "title": "Harder to Breathe",
+                  "price": 1.15,
+                  "id": 1,
+                  "sample": "public/samples/HardertoBreatheMaroon5.mp3",
+                  "fileHash": "112e4ji"
+              }
+          ]
+        }
+    ]
+}
