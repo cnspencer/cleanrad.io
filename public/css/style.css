@@ -42,11 +42,13 @@ body{
   
   /* Navbar classes */
   .nav-link {
-    color: #D2D3D9;
+    /* color: #D2D3D9; */
+    color: white;
   }
   .navbar {
     background-color: #1E1E57;
-    color: #D2D3D9;
+    /* color: #D2D3D9; */
+    color: white;
   }
   
   /* Various Buttons and other specialized divs */
@@ -83,6 +85,8 @@ body{
     margin-bottom: 0px;
     padding: 20px;
   }
+
+
   
   /* Color Hexes
   Main Bold Color (Navy): #1E1E57
