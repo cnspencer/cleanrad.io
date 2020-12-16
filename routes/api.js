@@ -1,7 +1,7 @@
 const express = require("express");
 // https://expressjs.com/en/guide/routing.html#express-router
 const router = express.Router();
-const albums = require("./api/album.json");
+const albums = require("./api/albums.json");
 const { sqlFetch } = require("./utils/utils");
 function getPageAndCount(usersPage, usersCount, totalItems) {
   let page, count;
