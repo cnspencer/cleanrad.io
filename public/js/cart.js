@@ -13,142 +13,35 @@ const shoppingCartData = {
 }
 
 function Album(props) {
-    const album = props.album;
-    return html`
-      <div key=${album.id} className="col-lg-4 col-md-6 col-mb-4">
-        <div className="card h-100">
-          <img
-         src=${"/img/albums/" + album.img}
-            className="card-img-top"
-            alt="bootstraplogo"
-          />
-          <div className="card-body">
-            <h5 className="card-title">${album.name}</h5>
-            <p className="card-text">${album.tracknum}</p>
-            <p className="card-text">$${album.price}</p>
-            <div
-              onClick=${() =>
-                setShoppingCartQuantity(
-                  album.tracks,
-                  currentQuantity => currentQuantity + 1
-                )}
-              className="btn btn-primary"
-            >
-              Add to Cart
-            </div>
+  const album = props.album;
+  return html`
+    <div key=${album.id} className="col-lg-4 col-md-6 col-mb-4">
+      <div className="card h-100">
+        <img
+       src=${"/img/albums/" + album.img}
+          className="card-img-top"
+          alt="bootstraplogo"
+        />
+        <div className="card-body">
+          <h5 className="card-title">${album.name}</h5>
+          <p className="card-text">${album.tracknum}</p>
+          <p className="card-text">$${album.price}</p>
+          <div
+            onClick=${() =>
+              setShoppingCartQuantity(
+                album.tracks,
+                currentQuantity => currentQuantity + 1
+              )}
+            className="btn btn-primary"
+          >
+            Add to Cart
           </div>
         </div>
-      </div>
-    `;
-  }
-function SortCriteria(props) {
-  // The below uncommented line is the same as:
-  // const name = props.name;
-  // const checked = props.checked
-  const { name, checked, onSortPropChange } = props;
-  const id = `sort-${title}`;
-  return html`
-    <span className="sort-prop mx-2">
-      <input
-        onChange=${e => onSortPropChange(e.target.checked, name)}
-        checked=${checked}
-        className="mx-1"
-        type="radio"
-        id=${id}
-        name="sortbyprop"
-      />
-      <label className="mx-1" htmlFor=${id}>${title}</label>
-    </span>
-  `;
-}
-function SortingOptions(props) {
-  const {
-    album,
-    sortProp,
-    onSortPropChange,
-    sortOrder,
-    onSortOrderChange
-  } = props;
-  // props to exclude from the sort
-  const propsExcludedFromSort = new Set(["album.track.id", "album.track.img"]);
-  const searchableProps = Object.keys(album)
-    // filter out excluded props
-    .filter(keyProperty => !propsExcludedFromSort.has(keyProperty))
-    // map the keys/props to React Components.
-    .map(
-      (keyProperty, index) => html`
-        <${SortCriteria}
-          key=${keyProperty}
-          name=${keyProperty}
-          onSortPropChange=${onSortPropChange}
-          checked=${keyProperty === sortProp}
-        />
-      `
-    );
-  return html`
-    <div className="col-md-12 row">
-      <div className="col-md-6">
-        Sort By:
-        <br />
-        ${searchableProps}
-      </div>
-      <div className="col-md-6">
-        Sort:
-        <br />
-        <span className="mx-2">
-          <input
-            onChange=${e => onSortOrderChange(e.target.checked, "ascending")}
-            className="mx-1"
-            type="radio"
-            checked=${sortOrder === "ascending"}
-            id="sort-ascending"
-            name="sortorder"
-          />
-          <label className="mx-1" htmlFor="sort-ascending">Ascending</label>
-        </span>
-        ${" "}
-        <span className="mx-2">
-          <input
-            onChange=${e => onSortOrderChange(e.target.checked, "descending")}
-            className="mx-1"
-            checked=${sortOrder === "descending"}
-            type="radio"
-            id="sort-descending"
-            name="sortorder"
-          />
-          <label className="mx-1" htmlFor="sort-descending">Descending</label>
-        </span>
       </div>
     </div>
   `;
 }
-function sortTracks(albums, sortProp, sortOrder) {
-  return albums.tracks.sort((focusedAlbum, alternateAlbum) => {
-    const moveFocusedAlbumLeft = -1,
-      moveFocusedAlbumRight = 1,
-      dontMoveEitherAlbum = 0;
-    if (focusedAlbum.tracks[sortProp] < alternateAlbum.tracks[sortProp]) {
-      if (sortOrder === "ascending") {
-        // move focusedWatch left of alternateWatch
-        return moveFocusedAlbumLeft;
-      } else {
-        // move focusedWatch right of alternateWatch
-        return moveFocusedAlbumRight;
-      }
-    } else if (focusedAlbum[sortProp] > alternateAlbum[sortProp]) {
-      if (sortOrder === "ascending") {
-        // move focusedWatch right of alternateWatch
-        return moveFocusedAlbumRight;
-      } else {
-        // move focusedWatch left of alternateWatch
-        return moveFocusedAlbumLeft;
-      }
-    } else {
-      // Both watches are equal don't move either.
-      return dontMoveEitherAlbum;
-    }
-  });
-}
+
 function Albums(props) {
   const [sortProp, setSortProp] = React.useState("name");
   const [sortOrder, setSortOrder] = React.useState("ascending");
@@ -182,6 +75,7 @@ function Albums(props) {
     </div>
   `;
 }
+
 function setShoppingCartQuantity(
   cartItem,
   updateQuantity = quantity => quantity + 1
@@ -272,6 +166,7 @@ function TopBar(props) {
     </div>
   `;
 }
+
 function Search() {
   const [searchTerm, setSearchTerm] = React.useState("");
   return html`
@@ -297,6 +192,118 @@ function Search() {
     </form>
   `;
 }
+
+function SortCriteria(props) {
+  // The below uncommented line is the same as:
+  // const name = props.name;
+  // const checked = props.checked
+  const { name, checked, onSortPropChange } = props;
+  const id = `sort-${title}`;
+  return html`
+    <span className="sort-prop mx-2">
+      <input
+        onChange=${e => onSortPropChange(e.target.checked, name)}
+        checked=${checked}
+        className="mx-1"
+        type="radio"
+        id=${id}
+        name="sortbyprop"
+      />
+      <label className="mx-1" htmlFor=${id}>${title}</label>
+    </span>
+  `;
+}
+
+function SortingOptions(props) {
+  const {
+    album,
+    sortProp,
+    onSortPropChange,
+    sortOrder,
+    onSortOrderChange
+  } = props;
+  // props to exclude from the sort
+  const propsExcludedFromSort = new Set(["album.track.id", "album.track.img"]);
+  const searchableProps = Object.keys(album)
+    // filter out excluded props
+    .filter(keyProperty => !propsExcludedFromSort.has(keyProperty))
+    // map the keys/props to React Components.
+    .map(
+      (keyProperty, index) => html`
+        <${SortCriteria}
+          key=${keyProperty}
+          name=${keyProperty}
+          onSortPropChange=${onSortPropChange}
+          checked=${keyProperty === sortProp}
+        />
+      `
+    );
+  return html`
+    <div className="col-md-12 row">
+      <div className="col-md-6">
+        Sort By:
+        <br />
+        ${searchableProps}
+      </div>
+      <div className="col-md-6">
+        Sort:
+        <br />
+        <span className="mx-2">
+          <input
+            onChange=${e => onSortOrderChange(e.target.checked, "ascending")}
+            className="mx-1"
+            type="radio"
+            checked=${sortOrder === "ascending"}
+            id="sort-ascending"
+            name="sortorder"
+          />
+          <label className="mx-1" htmlFor="sort-ascending">Ascending</label>
+        </span>
+        ${" "}
+        <span className="mx-2">
+          <input
+            onChange=${e => onSortOrderChange(e.target.checked, "descending")}
+            className="mx-1"
+            checked=${sortOrder === "descending"}
+            type="radio"
+            id="sort-descending"
+            name="sortorder"
+          />
+          <label className="mx-1" htmlFor="sort-descending">Descending</label>
+        </span>
+      </div>
+    </div>
+  `;
+}
+
+function sortTracks(albums, sortProp, sortOrder) {
+  return albums.tracks.sort((focusedAlbum, alternateAlbum) => {
+    const moveFocusedAlbumLeft = -1,
+      moveFocusedAlbumRight = 1,
+      dontMoveEitherAlbum = 0;
+    if (focusedAlbum.tracks[sortProp] < alternateAlbum.tracks[sortProp]) {
+      if (sortOrder === "ascending") {
+        // move focusedWatch left of alternateWatch
+        return moveFocusedAlbumLeft;
+      } else {
+        // move focusedWatch right of alternateWatch
+        return moveFocusedAlbumRight;
+      }
+    } else if (focusedAlbum[sortProp] > alternateAlbum[sortProp]) {
+      if (sortOrder === "ascending") {
+        // move focusedWatch right of alternateWatch
+        return moveFocusedAlbumRight;
+      } else {
+        // move focusedWatch left of alternateWatch
+        return moveFocusedAlbumLeft;
+      }
+    } else {
+      // Both watches are equal don't move either.
+      return dontMoveEitherAlbum;
+    }
+  });
+}
+
 // create a copy of watches;
 let filteredTracks;
 function filterTracks(searchTerm) {

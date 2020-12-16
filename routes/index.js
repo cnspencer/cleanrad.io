@@ -15,79 +15,80 @@ router.get("/", (req, res) => {
       }
     });
   });
-  router.get("/library/music", (req, res) => {
-      // renders the music.ejs page
-      res.render("music", {
-        // This gets rendered as the browsers title
-        // it is passed into the ejs page as the variable 'title'
-        title: "CleanRad.io",
-        user: req.user && {
-          "id": req.user.id,
-          "email": req.user.email, 
-          "displayName": req.user.displayName
-        }
-      });
+router.get("/library/music", (req, res) => {
+    // renders the music.ejs page
+    res.render("music", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io",
+      user: req.user && {
+        "id": req.user.id,
+        "email": req.user.email, 
+        "displayName": req.user.displayName
+      }
     });
-    router.get("/home", (req, res) => {
-        // renders the home.ejs page
-        res.render("home", {
-          // This gets rendered as the browsers title
-          // it is passed into the ejs page as the variable 'title'
-          title: "CleanRad.io"
-        });
-      });
-      router.get("/cart", (req, res) => {
-          // renders the cart.ejs page
-          res.render("cart", {
-            // This gets rendered as the browsers title
-            // it is passed into the ejs page as the variable 'title'
-            title: "CleanRad.io",
-            user: req.user && {
-              "id": req.user.id,
-              "email": req.user.email, 
-              "displayName": req.user.displayName
-            }
-          });
-        });
-        router.get("/mymusic", (req, res) => {
-            // renders the mymusic.ejs page
-            res.render("mymusic", {
-              // This gets rendered as the browsers title
-              // it is passed into the ejs page as the variable 'title'
-              title: "CleanRad.io",
-              user: req.user && {
-                "id": req.user.id,
-                "email": req.user.email, 
-                "displayName": req.user.displayName
-              }
-            });
-          });
-          router.get("/settings", (req, res) => {
-              // renders the settings.ejs page
-              res.render("settings", {
-                // This gets rendered as the browsers title
-                // it is passed into the ejs page as the variable 'title'
-                title: "CleanRad.io",
-                user: req.user && {
-                  "id": req.user.id,
-                  "email": req.user.email, 
-                  "displayName": req.user.displayName
-                }
-              });
-            });
-        router.get("/library/music/detail/${}", (req, res) => {
-            // renders the detail.ejs page
-            res.render("detail", {
-              // This gets rendered as the browsers title
-              // it is passed into the ejs page as the variable 'title'
-              title: "CleanRad.io",
-              user: req.user && {
-                "id": req.user.id,
-                "email": req.user.email, 
-                "displayName": req.user.displayName
-              }
-            });
-          });
+});
+router.get("/home", (req, res) => {
+    // renders the home.ejs page
+    res.render("accounthome", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io"
+    });
+});
+router.get("/cart", (req, res) => {
+    // renders the cart.ejs page
+    res.render("cart", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io",
+      user: req.user && {
+        "id": req.user.id,
+        "email": req.user.email, 
+        "displayName": req.user.displayName
+      }
+    });
+});
+router.get("/mymusic", (req, res) => {
+    // renders the mymusic.ejs page
+    res.render("mymusic", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io",
+      user: req.user && {
+        "id": req.user.id,
+        "email": req.user.email, 
+        "displayName": req.user.displayName
+      }
+    });
+});
+router.get("/settings", (req, res) => {
+    // renders the settings.ejs page
+    res.render("settings", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io",
+      user: req.user && {
+        "id": req.user.id,
+        "email": req.user.email, 
+        "displayName": req.user.displayName
+      }
+    });
+});
+router.get("/library/music/detail/${subject}", (req, res) => {
+    // renders the detail.ejs page
+    res.render("detail", {
+      // This gets rendered as the browsers title
+      // it is passed into the ejs page as the variable 'title'
+      title: "CleanRad.io",
+      subject: "${subject}",
+      user: req.user && {
+        "id": req.user.id,
+        "email": req.user.email, 
+        "displayName": req.user.displayName
+      }
+    });
+});
 ////// User Sign up and login is explained roughly here
 ////// https://scotch.io/tutorials/easy-node-authentication-setup-and-local
 router.get("/login", function(req, res) {
