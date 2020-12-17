@@ -1,6 +1,18 @@
+/*
+Mild and soft color scheme from 
+https://colorate.azurewebsites.net/Color/007BFF
+using the login button color as the main reference
+
+main #007BFF
+Base #39CEFF
+Accent #72FFFB
+Off white tint #DAECFF
+
+#72FFFB
+*/
+
 body{ 
-    min-height:100vh; 
-    background-color: #B5B5B5;
+    background-color: #DAECFF;
   }
   h1 {
     size: 80px;
@@ -46,22 +58,22 @@ body{
     color: white;
   }
   .navbar {
-    background-color: #1E1E57;
+    background-color: #007bff;
     /* color: #D2D3D9; */
     color: white;
   }
   
   /* Various Buttons and other specialized divs */
   .button {
-    background-color: #4F4C85;
-    border-ratio: 10%;
+    background-color: #39CEFF;
+    border-radius: 10%;
     border: none;
     color: #F0FFFF;
   }
   .text-field {
     border: none;
     color: #F0FFFF;
-    background-color: #797887;
+    background-color: white;
   }
   .track-line {
     height: 55px;
