@@ -14,15 +14,16 @@ async function findByEmail(email) {
   return user;
 }
 
-async function saveUser({ email, hash, salt, iterations, displayName, accountType }) {
+//async function saveUser({ email, hash, salt, iterations, displayName, accountType }) {
+  async function saveUser({ email, hash, salt, iterations, displayName }) {
   const users = await sqlFetch`
 		INSERT INTO users
 			( -- columns to insert data into
-			[email], [hash], [salt], [iterations], [displayName], [isAdmin], [accountType]
+        [email], [hash], [salt], [iterations], [displayName], [isAdmin]
 			)
 		VALUES
-			( -- first row: values for the columns in the list above
-					${email}, ${hash}, ${salt}, ${iterations}, ${displayName}, ${false}, ${accountType}
+      ( -- first row: values for the columns in the list above
+        ${email}, ${hash}, ${salt}, ${iterations}, ${displayName}, ${false}
 			)
 		SELECT id FROM users WHERE ID = @@IDENTITY`;
   const user = users[0];
@@ -98,7 +99,7 @@ module.exports = function(passport) {
             salt,
             iterations,
             displayName: req.body.displayName,
-            accountType: req.body.accountType
+            //accountType: req.body.accountType
           });
 
           return done(null, newUser);
