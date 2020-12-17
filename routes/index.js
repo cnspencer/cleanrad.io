@@ -75,17 +75,18 @@ router.get("/settings", (req, res) => {
       }
     });
 });
-router.get("/library/music/detail/${subject}", (req, res) => {
+router.get("/library/music/detail/:subject", (req, res) => {
     // renders the detail.ejs page
     res.render("detail", {
       // This gets rendered as the browsers title
       // it is passed into the ejs page as the variable 'title'
-      title: "CleanRad.io",
-      subject: "${subject}",
+      title: req.params[0] + " Details - CleanRad.io",
+      subject: req.params[0],
       user: req.user && {
         "id": req.user.id,
         "email": req.user.email, 
-        "displayName": req.user.displayName
+        "displayName": req.user.displayName,
+        "accountType": req.user.type
       }
     });
 });
