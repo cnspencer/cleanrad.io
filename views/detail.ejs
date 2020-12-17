@@ -4,11 +4,33 @@
       </title>
 </head>
 <h1><%= subject %></h1>
-<div id="description">Details</div>
-<div id="tracksdiv">You should see some songs from <%= subject %> here soon</div>
+<div id="artdiv"><img src="https://upload.wikimedia.org/wikipedia/en/0/0e/Maroon_5_-_Harder_to_Breathe.png"></div>
+<div id="description">This is the debut album of American band Maroon 5. Contains 1 explicit track which has been edited for daytime airing standards.</div>
+<p>Click the buttons to play or pause the audio.</p>
+<div class="track-line main-font">
+    <audio id="myAudio">
+        <source src="/samples/HardertoBreatheMaroon5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+Harder to Breathe
+<script>
+    var x = document.getElementById("myAudio"); 
+    
+    function playAudio() { 
+      x.play(); 
+    } 
+    
+    function pauseAudio() { 
+      x.pause(); 
+    } 
+    </script>
+<button onclick="playAudio()" type="button">Play Sample</button>
+<button onclick="pauseAudio()" type="button">Pause Sample</button>
+</p>
+</div>
 
 
-<%- contentFor('scriptsAfter') %>
-<script type="module" src="/js/detail.js"></script>
+<!-- <%- contentFor('scriptsAfter') %>
+<script type="module" src="/js/detail.js"></script> --->
 <%- contentFor('cssAfter')%>
 <link rel="stylesheet" href="/css/style.css" />

@@ -75,22 +75,39 @@ router.get("/settings", (req, res) => {
       }
     });
 });
-router.get("/library/music/detail/:subject", (req, res) => {
-    // renders the detail.ejs page
-    res.render("detail", {
-      // This gets rendered as the browsers title
-      // it is passed into the ejs page as the variable 'title'
-      //title: req.params[0] + " Details - CleanRad.io",
-      //subject: req.params[0],
-      title: req.params[0] + " on CleanRad.io",
-      subject: req.params[0],
-      user: req.user && {
-        "id": req.user.id,
-        "email": req.user.email, 
-        "displayName": req.user.displayName,
-        //"accountType": req.user.type
-      }
-    });
+// The detail page should be generalizable, but isn't hooked up to the music database yet, so some hardcoded ones follow
+// router.get("/library/music/detail/:subject", (req, res) => {
+//     // renders the detail.ejs page
+//     res.render("detail", {
+//       // This gets rendered as the browsers title
+//       // it is passed into the ejs page as the variable 'title'
+//       //title: req.params[0] + " Details - CleanRad.io",
+//       //subject: req.params[0],
+//       title: req.params[0] + " on CleanRad.io",
+//       subject: req.params[0],
+//       user: req.user && {
+//         "id": req.user.id,
+//         "email": req.user.email, 
+//         "displayName": req.user.displayName,
+//         //"accountType": req.user.type
+//       }
+//     });
+// });
+router.get("/library/music/detail/songsaboutjane", (req, res) => {
+  // renders the detail.ejs page
+  res.render("detail", {
+    // This gets rendered as the browsers title
+    // it is passed into the ejs page as the variable 'title'
+    //title: req.params[0] + " Details - CleanRad.io",
+    //subject: req.params[0],
+    title: "Songs About Jane on CleanRad.io",
+    subject: "Songs About Jane",
+    user: req.user && {
+      "id": req.user.id,
+      "email": req.user.email, 
+      "displayName": req.user.displayName,
+    }
+  });
 });
 ////// User Sign up and login is explained roughly here
 ////// https://scotch.io/tutorials/easy-node-authentication-setup-and-local
