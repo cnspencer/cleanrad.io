@@ -3,8 +3,8 @@ let watches = {
     {
       name: "Maroon 5",
       description:
-        "Harder To Breathe (2002)",
-      img: "https://upload.wikimedia.org/wikipedia/en/0/0e/Maroon_5_-_Harder_to_Breathe.png",
+        "Songs About Jane (2002)",
+      img: "https://images-na.ssl-images-amazon.com/images/I/71pGUllCq0L._SY355_.jpg",
       price: 11.99,
       id: 3,
       stars: 2.75,
