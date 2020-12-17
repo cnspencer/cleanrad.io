@@ -1,6 +1,16 @@
 let watches = {
   products: [
     {
+      name: "Maroon 5",
+      description:
+        "Harder To Breathe (2002)",
+      img: "https://upload.wikimedia.org/wikipedia/en/0/0e/Maroon_5_-_Harder_to_Breathe.png",
+      price: 11.99,
+      id: 3,
+      stars: 2.75,
+      music: "/samples/HardertoBreatheMaroon5.mp3"
+    },
+    {
       name: "Led Zeppelin",
       description: "Led Zeppelin (1969).",
       img: "https://res-4.cloudinary.com/ybmedia/image/upload/c_scale,f_auto,q_auto,w_700/v1/m/a/2/a2427aadf53e76d88c15e97a7a270b478d53664a/04LedZep.jpg",
@@ -21,15 +31,6 @@ let watches = {
       description:
         "Dark Side of the Moon (1973)",
       img: "https://res-3.cloudinary.com/ybmedia/image/upload/c_scale,f_auto,q_auto,w_700/v1/m/4/f/4fe9cb6bef84732ed7eb16cd47bdabba11eb5f74/11PinkFloyd.jpg",
-      price: 11.99,
-      id: 3,
-      stars: 2.75
-    },
-    {
-      name: "Maroon 5",
-      description:
-        "Harder To Breathe (2002)",
-      img: "https://upload.wikimedia.org/wikipedia/en/0/0e/Maroon_5_-_Harder_to_Breathe.png",
       price: 11.99,
       id: 3,
       stars: 2.75
@@ -117,6 +118,7 @@ const lis = watches.products.map(function (watch) {
               <div class="card-body">
                 <h5 class="card-title">${watch.name}</h5>
                 <p class="card-text">${watch.description}</p>
+                <a href="${watch.music}" class="btn btn-primary">Play Sample</a>
                 <a href="${watch.img}" class="btn btn-primary">Download</a>
               </div>
             </div>
