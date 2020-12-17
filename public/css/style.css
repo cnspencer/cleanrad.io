@@ -27,6 +27,9 @@ body{
     margin-top: 60px;
     padding: 10px;
   }
+  a {
+    color:antiquewhite;
+  }
   
   .side-borders {
       border-style: solid solid solid solid;
