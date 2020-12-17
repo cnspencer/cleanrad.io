@@ -17,7 +17,8 @@ let watches = {
       img: "https://images-na.ssl-images-amazon.com/images/I/61DyGbsly8L._SL1000_.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Thriller.mp3"
     },
     {
       name: "Eagles",
@@ -26,7 +27,8 @@ let watches = {
       img: "https://i.pinimg.com/originals/71/24/ea/7124eaab7ae01bf7dde96e519331ef04.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Led Zeppelin",
@@ -34,7 +36,8 @@ let watches = {
       img: "https://res-4.cloudinary.com/ybmedia/image/upload/c_scale,f_auto,q_auto,w_700/v1/m/a/2/a2427aadf53e76d88c15e97a7a270b478d53664a/04LedZep.jpg",
       price: 14.99,
       id: 1,
-      stars: 3.5
+      stars: 3.5,
+      music: "/samples/LedZeppelin.mp3"
     },
     {
       name: "The Beatles",
@@ -42,7 +45,8 @@ let watches = {
       img: "https://res-2.cloudinary.com/ybmedia/image/upload/c_scale,f_auto,q_auto,w_700/v1/m/0/6/065fe874298662a7127bb961c226e8219b5ba730/05AbbeyRoad.jpg",
       price: 12.99,
       id: 2,
-      stars: 1.6666666666666667
+      stars: 1.6666666666666667,
+      music: "/samples/Beatles.mp3"
     },
     {
       name: "Pink Floyd",
