@@ -130,7 +130,7 @@ const lis = watches.products.map(function (watch) {
               <h5 class="card-title"><a href="library/music/detail/songsaboutjane">${watch.name}</a></h5>
               <p class="card-text">${watch.description}</p>
                 <a href="${watch.music}" class="btn btn-primary">Play Sample</a>
-                <a href="${watch.music}" download="song" class="btn btn-primary">Download</a>
+                <a href="${watch.music}" download="${watch.name}" class="btn btn-primary">Download</a>
               </div>
             </div>
           </div>`}).join("\n\t")
