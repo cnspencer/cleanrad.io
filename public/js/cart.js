@@ -96,7 +96,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/ACDC.mp3"
     },
     {
       name: "Celine Dion",
@@ -106,7 +106,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/Dion.mp3"
     },
     {
       name: "Elton John",
@@ -116,7 +116,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/EltonJohn.mp3"
     }
   ],
   count: 8,
