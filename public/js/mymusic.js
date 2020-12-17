@@ -36,7 +36,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/PinkFloyd.mp3"
     },
     {
       name: "Billie Eilish",
@@ -46,7 +46,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/Eilish.mp3"
     },
     {
       name: "Carrie Underwood",
