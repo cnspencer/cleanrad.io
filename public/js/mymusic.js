@@ -117,6 +117,7 @@ const lis = watches.products.map(function (watch) {
               <div class="card-body">
                 <h5 class="card-title">${watch.name}</h5>
                 <p class="card-text">${watch.description}</p>
+                <a href="${watch.img}" class="btn btn-primary">Download</a>
               </div>
             </div>
           </div>`}).join("\n\t")
@@ -124,5 +125,25 @@ const lis = watches.products.map(function (watch) {
 const mydiv = document.createElement("div");
 mydiv.innerHTML = `\n\t${lis}\n`;
 
+
+const lis2 = watches.products.map(function (watch) {
+  return ` <div class="col-lg-3 col-md-3 col-mb-3">
+            <div class="card h-100">
+              <img src="${watch.img}" class="card-img-top" alt="bootstraplogo">
+              <div class="card-body">
+                <h5 class="card-title">${watch.name}</h5>
+                <p class="card-text">${watch.description}</p>
+              </div>
+            </div>
+          </div>`}).join("\n\t")
+const mydiv2 = document.createElement("div");
+mydiv2.innerHTML = `\n\t${lis2}\n`;
+
+
+
+
+
 document.getElementById("displaywatchesdiv").innerHTML = "";
 document.getElementById("displaywatchesdiv").innerHTML = mydiv.innerHTML;
+document.getElementById("displayrecentdiv").innerHTML = "";
+document.getElementById("displayrecentdiv").innerHTML = mydiv2.innerHTML;
