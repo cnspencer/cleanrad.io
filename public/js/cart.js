@@ -55,7 +55,8 @@ let watches = {
       img: "https://res-3.cloudinary.com/ybmedia/image/upload/c_scale,f_auto,q_auto,w_700/v1/m/4/f/4fe9cb6bef84732ed7eb16cd47bdabba11eb5f74/11PinkFloyd.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Billie Eilish",
@@ -64,7 +65,8 @@ let watches = {
       img: "https://i.pinimg.com/originals/78/6e/a3/786ea3d49748ab17966e4301f0f73bb6.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Carrie Underwood",
@@ -73,7 +75,8 @@ let watches = {
       img: "https://cdn.shopify.com/s/files/1/0896/2534/products/3_grande.jpg?v=1571269681",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Taylor Swift",
@@ -82,7 +85,8 @@ let watches = {
       img: "https://www.udiscovermusic.com/wp-content/uploads/2018/10/Taylor-Swift-Fearless-album-cover-web-optimised-820-820x600.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "AC/DC",
@@ -91,7 +95,8 @@ let watches = {
       img: "https://miro.medium.com/max/900/1*BHn7gMe-se8CeeW1CG3u3g.jpeg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Celine Dion",
@@ -100,7 +105,8 @@ let watches = {
       img: "https://images.recordsale.de/600/600/celinedion-letstalkaboutlove.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     },
     {
       name: "Elton John",
@@ -109,7 +115,8 @@ let watches = {
       img: "https://static.bhphoto.com/images/images750x750/1493205772_1332591.jpg",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/Eagles.mp3"
     }
   ],
   count: 8,
