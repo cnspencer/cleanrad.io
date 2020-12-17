@@ -127,7 +127,7 @@ const lis = watches.products.map(function (watch) {
             <div class="card h-100">
               <img src="${watch.img}" class="card-img-top" alt="bootstraplogo">
               <div class="card-body">
-                <h5 class="card-title">${watch.name}</h5>
+                <h5 class="card-title"><a href="/detail/songsaboutjane">${watch.name}</a></h5>
                 <p class="card-text">${watch.description}</p>
                 <a href="${watch.music}" class="btn btn-primary">Play Sample</a>
                 <a href="${watch.img}" class="btn btn-primary">Download</a>
@@ -144,8 +144,8 @@ const lis2 = watches.products.map(function (watch) {
             <div class="card h-100">
               <img src="${watch.img}" class="card-img-top" alt="bootstraplogo">
               <div class="card-body">
-                <h5 class="card-title">${watch.name}</h5>
-                <p class="card-text">${watch.description}</p>
+              <h5 class="card-title"><a href="/detail/songsaboutjane">${watch.name}</a></h5>
+              <p class="card-text">${watch.description}</p>
               </div>
             </div>
           </div>`}).join("\n\t")
