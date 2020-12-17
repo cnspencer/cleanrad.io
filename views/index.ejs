@@ -3,19 +3,28 @@
     <div id="albumview" class="row displaydiv">
     </div>
 </div>
-<% if (typeof user !== "undefined") { %>
-    <li>
-<span href="#" tabindex="-1">Welcome <%= user.displayName %></span>
-</li>
-<form action="/logout">
-    <input class="button my-2 my-sm-0" type="submit" value="Logout" />
-</form>
+<% if (typeof user !=="undefined" ) { %>
+    <p>
+        <span href="#" tabindex="-1">Welcome <%= user.displayName %></span>
+    </p>
+    <form action="/mymusic">
+        <input class="button my-2 my-sm-0" type="submit" value="My Music" />
+    </form>
+    <p></p>
+    <form action="/settings">
+        <input class="button my-2 my-sm-0" type="submit" value="Settings" />
+    </form>
+    <p></p>
+    <form action="/logout">
+        <input class="button my-2 my-sm-0" type="submit" value="Logout" />
+    </form>
     <% } else { %>
-<form action="/login">
-    <input class="button my-2 my-sm-0" type="submit" value="Login" />
-</form>
-    <% } %>
+        <p>Login or create an account to get started!</p>
+        <form action="/login">
+            <input class="button my-2 my-sm-0" type="submit" value="Login" />
+        </form>
+        <% } %>
 
-<%- contentFor('scriptsAfter') %>
-<%- contentFor('cssAfter')%>
-<link rel="stylesheet" href="/css/style.css" />
+            <%- contentFor('scriptsAfter') %>
+                <%- contentFor('cssAfter')%>
+                    <link rel="stylesheet" href="/css/style.css" />
