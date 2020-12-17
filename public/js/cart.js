@@ -76,7 +76,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/Carrie.mp3"
     },
     {
       name: "Taylor Swift",
@@ -86,7 +86,7 @@ let watches = {
       price: 11.99,
       id: 3,
       stars: 2.75,
-      music: "/samples/Eagles.mp3"
+      music: "/samples/Swift.mp3"
     },
     {
       name: "AC/DC",
