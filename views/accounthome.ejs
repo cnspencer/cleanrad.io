@@ -1,6 +1,27 @@
-<h1>CleanRad.io "Music for Everyone"</h1> 
+<h1>CleanRad.io "Music for Everyone"</h1>
 <p>
     CleanRad.io is your source of radio edited music.
-</p>
+    <audio id="myAudio">
+        <source src="/samples/HardertoBreatheMaroon5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
+<p>Click the buttons to play or pause the audio.</p>
+<script>
+    var x = document.getElementById("myAudio"); 
+    
+    function playAudio() { 
+      x.play(); 
+    } 
+    
+    function pauseAudio() { 
+      x.pause(); 
+    } 
+    </script>
+<button onclick="playAudio()" type="button">Play Audio</button>
+<button onclick="pauseAudio()" type="button">Pause Audio</button>
+</p>
+<%- contentFor('scriptsAfter') %>
+<script type="module" src="/js/accounthome.js"></script>
+<%- contentFor('cssAfter')%>
 <link rel="stylesheet" href="/css/style.css" />

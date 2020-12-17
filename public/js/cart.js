@@ -3,11 +3,12 @@ let watches = {
     {
       name: "Maroon 5",
       description:
-        "V (2014)",
-      img: "https://upload.wikimedia.org/wikipedia/en/5/53/Maroon_5_-_V_%28Official_Album_Cover%29.png",
+        "Harder To Breathe (2002)",
+      img: "https://upload.wikimedia.org/wikipedia/en/0/0e/Maroon_5_-_Harder_to_Breathe.png",
       price: 11.99,
       id: 3,
-      stars: 2.75
+      stars: 2.75,
+      music: "/samples/HardertoBreatheMaroon5.mp3"
     },
     {
       name: "Michael Jackson",
@@ -118,6 +119,7 @@ const lis = watches.products.map(function (watch) {
               <h5 class="card-title">${watch.name}</h5>
               <p class="card-text">${watch.description}</p>
               <p class="card-price">$${watch.price}</p>
+              <a href="${watch.music}" class="btn btn-primary">Play Sample</a>
               <a href="${watch.img}" class="btn btn-primary">Add to Cart</a>
             </div>
             
